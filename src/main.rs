@@ -1,10 +1,24 @@
-use ssh2::{Session, Channel};
-use std::net::TcpStream;
-use std::io::Read;
+use std::io
 
 
 
-fn login() -> (String, String) {
+// fn login() -> (String, String) {
+//     println!("Enter your username: ");
+//     let mut username = String::new();
+//     std::io::stdin().read_line(&mut username).unwrap();
+//     let username = username.trim();
+
+//     println!("Enter your password: ");
+//     let mut password = String::new();
+//     std::io::stdin().read_line(&mut password).unwrap();
+//     let password = password.trim();
+
+//     (username.to_string(), password.to_string())
+// }
+
+
+
+fn sign_up(String, String) -> (String, String){
     println!("Enter your username: ");
     let mut username = String::new();
     std::io::stdin().read_line(&mut username).unwrap();
@@ -15,23 +29,7 @@ fn login() -> (String, String) {
     std::io::stdin().read_line(&mut password).unwrap();
     let password = password.trim();
 
-    (username.to_string(), password.to_string())
-}
-
-
-
-fn sign_up() -> (String, String){
-    println!("Enter your username: ");
-    let mut username = String::new();
-    std::io::stdin().read_line(&mut username).unwrap();
-    let username = username.trim();
-
-    println!("Enter your password: ");
-    let mut password = String::new();
-    std::io::stdin().read_line(&mut password).unwrap();
-    let password = password.trim();
-
-    (username.to_string(), password.to_string())
+    println!("Username: {}, Password: {}", username, password);
 
 }
 
@@ -50,7 +48,7 @@ fn main() {
     match input {
         "y" => {
             println!("Please create a login");
-            create_login();
+            // create_login();
         },
         "n" => {
             println!("Sign up");
